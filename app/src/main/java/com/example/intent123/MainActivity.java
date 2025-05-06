@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText j_emailEditText, j_passwordEditText;
     private TextView j_statusText;
     private Button j_loginButton;
+    private Button j_btn_main;
     String tag = "LoginCheck";
     ActivityResultLauncher<Intent> launcher;
 
@@ -68,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
                 Intent data = result.getData();
                 j_statusText.setText(data.getStringExtra("status"));
             }
+            j_btn_main = findViewById(R.id.btn_main);
+            //j_status 로그인 성공
+            if("로그인성공".equals(j_statusText.getText().toString())){
+                j_btn_main.setVisibility(View.VISIBLE);
+            }else{
+                j_btn_main.setVisibility(View.INVISIBLE);
+            }
         });
+    }
+
+    public void onClicked_main(View view) {
+        Intent intent = new Intent(MainActivity.this, IntentActivity.class);
+        startActivity(intent);
     }
 }

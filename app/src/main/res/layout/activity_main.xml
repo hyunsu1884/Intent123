@@ -119,6 +119,14 @@
                 android:textColor="#E61818"
                 android:text="로그인 진행중"
                 android:textAlignment="center"/>
+
+            <Button
+                android:id="@+id/btn_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:text="메인화면으로 이동"
+                android:onClick="onClicked_main"/>
         </LinearLayout>
     </LinearLayout>
 
